@@ -7,6 +7,8 @@ public class Leitor {
     private String nome;
     private int livrosEmprestados;
 
+    public Leitor(){}
+
     public Leitor(int carteiraDeIdentificacao, String nome, int livrosEmprestados) {
         this.IdcarteiraDeIdentificacao = carteiraDeIdentificacao;
         this.nome = nome;

@@ -5,9 +5,11 @@ public class Livro {
     
     private int idLivro;
     private String titulo;
-    private String disponibilidade;
+    private LivroEnum disponibilidade;
 
-    public Livro(int idLivro, String titulo, String disponibilidade) {
+    public Livro(){}
+
+    public Livro(int idLivro, String titulo, LivroEnum disponibilidade) {
         this.idLivro = idLivro;
         this.titulo = titulo;
         this.disponibilidade = disponibilidade;
@@ -29,12 +31,11 @@ public class Livro {
         this.titulo = titulo;
     }
 
-
-    public String getDisponibilidade() {
+    public LivroEnum getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(String disponibilidade) {
+    public void setDisponibilidade(LivroEnum disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 

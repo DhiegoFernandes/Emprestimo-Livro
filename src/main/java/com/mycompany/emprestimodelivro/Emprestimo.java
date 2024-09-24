@@ -11,6 +11,8 @@ public class Emprestimo {
     private Atendente atendente;
 
     //Construtor
+    public Emprestimo(){}
+
     public Emprestimo(String dataEmprestimo, Livro livro, Leitor leitor, Atendente atendente) {
         contadorEmprestimos++;
         this.idEmprestimo = contadorEmprestimos;
