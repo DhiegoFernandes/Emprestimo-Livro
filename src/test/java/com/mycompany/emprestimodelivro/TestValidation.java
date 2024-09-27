@@ -76,5 +76,26 @@ class TestValidation {
         assertTrue(erros.contains("O nome do leitor deve conter apenas letras."));
     }
 
+    @Test
+    public void tituloLivroInvalido_Vazio_DeveRetornarErro() {
+        Livro livro = new Livro(1, "", LivroEnum.DISPONIVEL);
+        List<String> erros = LivroClassTests.ehValidoParaInclusao(livro);
+        assertTrue(erros.contains("O título do livro não pode ser vazio."));
+    }
+
+    @Test
+    public void nomeLeitorInvalido_Vazio_DeveRetornarErro() {
+        Leitor leitor = new Leitor(1, "", 0);
+        List<String> erros = LeitorClassTests.ehValidoParaInclusao(leitor);
+        assertTrue(erros.contains("O nome do leitor não pode ser vazio."));
+    }
+
+    @Test
+    public void emprestimoComAtendenteNulo_DeveRetornarErro() {
+        Emprestimo emprestimo = new Emprestimo("2023-09-01", new Livro(1, "O Hobbit", null), new Leitor(), null);
+        List<String> erros = EmprestimoClassTests.ehValidoParaInclusao(emprestimo);
+        assertTrue(erros.contains("O atendente não pode ser nulo."));
+    }
+
 
 }
