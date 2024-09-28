@@ -1,18 +1,29 @@
-
 package com.mycompany.emprestimodelivro;
 
 public class Livro {
-    
+
     private int idLivro;
     private String titulo;
     private LivroEnum disponibilidade;
 
-    public Livro(){}
+    public Livro() {
+    }
 
     public Livro(int idLivro, String titulo, LivroEnum disponibilidade) {
         this.idLivro = idLivro;
         this.titulo = titulo;
         this.disponibilidade = disponibilidade;
+    }
+
+    public String verificarDisponibilidade() {
+        switch (disponibilidade) {
+            case DISPONIVEL:
+                return "O livro " + titulo + " está disponível.";
+            case INDISPONIVEL:
+                return "O livro " + titulo + " está indisponível.";
+            default:
+                return "Status de disponibilidade desconhecido.";
+        }
     }
 
     public int getIdLivro() {
@@ -43,7 +54,5 @@ public class Livro {
     public String toString() {
         return "Livro{" + "idLivro=" + idLivro + ", titulo=" + titulo + ", disponibilidade=" + disponibilidade + '}';
     }
-    
-    
-    
+
 }

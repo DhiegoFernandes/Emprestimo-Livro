@@ -11,6 +11,14 @@ public class Atendente {
         this.idAtendente = idAtendente;
         this.nome = nome;
     }
+    
+    public boolean validarIdentificacaoLeitor(Leitor leitor) {
+        if (leitor.getIdCarteiraDeIdentificacao() != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public int getIdAtendente() {
         return idAtendente;
