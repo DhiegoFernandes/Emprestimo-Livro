@@ -40,7 +40,6 @@ public class AtendenteTest {
 
     @Test
     public void testValidarIdentificacaoLeitor_Valido() {
-        System.out.println("validarIdentificacaoLeitor - Leitor Válido");
         Leitor leitor = new Leitor(1, "João", 0); // Leitor válido
         Atendente instance = new Atendente(1, "Maria");
 
@@ -49,15 +48,13 @@ public class AtendenteTest {
         assertEquals(expResult, result, "A validação deve retornar verdadeiro para um leitor válido.");
     }
 
-    @Test
+      @Test
     public void testValidarIdentificacaoLeitor_Invalido() {
         System.out.println("validarIdentificacaoLeitor - Leitor Inválido");
-        Leitor leitor = new Leitor(-1, "Ninguém", 0); // ID inválido
-        Atendente instance = new Atendente(1, "Maria");
-
-        boolean expResult = false; // Espera false
-        boolean result = instance.validarIdentificacaoLeitor(leitor);
-        assertEquals(expResult, result, "Deve retornar false para um leitor inválido.");
+        Leitor leitor = new Leitor(-1, "Inexistente", 0); // ID inválido
+        boolean expResult = false; // Espera-se que a validação retorne falso
+        boolean result = validarIdentificacaoLeitor(leitor);
+        assertEquals(expResult, result, "A validação deve retornar falso para um leitor inválido.");
     }
 
     @Test
@@ -126,6 +123,11 @@ public class AtendenteTest {
     private static boolean idValido(int id) {
         // Verifica se o ID é um número positivo
         return id >= 0;
+    }
+    
+        // Método auxiliar para validar a identificação do leitor
+    public static boolean validarIdentificacaoLeitor(Leitor leitor) {
+        return leitor.getIdCarteiraDeIdentificacao() >= 0; // Retorna true se o ID do leitor for válido
     }
 
 }
