@@ -43,7 +43,7 @@ public class LivroTest {
         System.out.println("verificarDisponibilidade - disponível");
         Livro livro = new Livro(1, "O Senhor dos Anéis", LivroEnum.DISPONIVEL);
         String expResult = "O livro O Senhor dos Anéis está disponível."; //Espera disponibilidade
-        String result = livro.verificarDisponibilidade();
+        String result = livro.verificarDisponibilidade(livro);
         assertEquals(expResult, result);
     }
 
@@ -52,7 +52,7 @@ public class LivroTest {
         System.out.println("verificarDisponibilidade - indisponível");
         Livro livro = new Livro(2, "1984", LivroEnum.INDISPONIVEL);
         String expResult = "O livro 1984 está indisponível."; // espera indisponibilidade
-        String result = livro.verificarDisponibilidade();
+        String result = livro.verificarDisponibilidade(livro);
         assertEquals(expResult, result);
     }
 

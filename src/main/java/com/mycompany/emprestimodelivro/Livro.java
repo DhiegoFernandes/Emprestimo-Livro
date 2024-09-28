@@ -15,12 +15,12 @@ public class Livro {
         this.disponibilidade = disponibilidade;
     }
 
-    public String verificarDisponibilidade() {
+    public String verificarDisponibilidade(Livro livro) {
         switch (disponibilidade) {
             case DISPONIVEL:
-                return "O livro " + titulo + " está disponível.";
+                return "O livro " + livro.titulo + " está disponível.";
             case INDISPONIVEL:
-                return "O livro " + titulo + " está indisponível.";
+                return "O livro " + livro.titulo + " está indisponível.";
             default:
                 return "Status de disponibilidade desconhecido.";
         }

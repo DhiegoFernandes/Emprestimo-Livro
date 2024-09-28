@@ -11,7 +11,7 @@ public class EmprestimoDeLivro {
         Scanner sc = new Scanner(System.in);
 
         Livro livro1 = new Livro(1, "Bridge to Terabithia", DISPONIVEL);
-        Leitor leitor1 = new Leitor(1, null, 0);
+        Leitor leitor1 = new Leitor(1, "João", 0);
         Atendente at1 = new Atendente(1, "Maria");
 
         System.out.println(livro1);
@@ -43,7 +43,7 @@ public class EmprestimoDeLivro {
 
                 case 2:
                     // Verificar disponibilidade do livro
-                    System.out.println(livro1.verificarDisponibilidade());
+                    System.out.println(livro1.verificarDisponibilidade(livro1));
                     break;
 
                 case 3:
